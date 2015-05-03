@@ -1,0 +1,50 @@
+package io.github.locatlang.locattest;
+
+import locat.util.Random;
+import locat.util.Math;
+import locat.util.Console;
+
+public main class Main {
+    public static void main() {
+        Random random = new Random();
+
+        int length = randInt(10, 100, random);
+
+        int[] array = new int[];
+
+        for(int i = 0; i < length; i++) {
+            int number = randInt(-999, 999, random);
+            array[i] = number;
+        }
+
+        Console.log("Problem 2:");
+        Console.log("New array: " + array);
+        Console.log("\nBar chart:");
+
+        int smallest = array.min();
+        string space = "";
+
+        if(smallest < 0)
+            space = (" ").repeat(Math.abs(smallest));
+
+        Console.log(space + "0");
+        Console.log(space + "|");
+
+        for(int i = 0; i < length; i++) {
+            int number = array[i];
+
+            string line = space;
+
+            if(number < 0)
+                line = line.substring(0, smallest * -1 + number);
+
+            line += ("*").repeat(Math.abs(number));
+
+            Console.log(line);
+        }
+    }
+
+    public static int randInt(int min, int max, Random random) {
+        return random.nextInt((max - min) + 1) + min;
+    }
+}

@@ -4,12 +4,16 @@
 		<meta charset="UTF-8">
 		<title>Locat Programming Language</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-		<meta name="theme-color" content="#ffffff">
+		<meta name="theme-color" content="#0796DD">
 		<link rel='stylesheet' href='styles/index.css'>
+		<script src='libraries/jquery.js'></script>
+		<script src='libraries/snapsvg.js'></script>
+		<script src='//creeper32605.github.io/things/material/ripple.js'></script>
+		<script src='scripts/index.js'></script>
 	</head>
 	<body>
 		<header>
-			<div class='hamburger'>
+			<div class='hamburger' id='menu'>
 				<div class='bars'>
 					<div class='bar-top'></div>
 					<div class='bar-center'></div>
@@ -20,8 +24,13 @@
 				<div class='title active'>Locat Programming Language</div>
 			</div>
 		</header>
+		<div id='sidebar-back' class='hidden'></div>
+		<div id='sidebar' class='hidden'>
+			<div class='sidebar-item selected' data-section='home'>Home</div>
+			<div class='sidebar-item' data-section='examples'>Examples</div>
+		</div>
 		<div id='sections'>
-			<section name='home'>
+			<section name='home' class='active'>
 				<h1>So this is a programming language</h1>
 				<p>
 					Creating programming languages because of some complaining about Javascript is perfectly normal, right?<br>
@@ -29,10 +38,17 @@
 				</p>
 				<h3>This is not the best website for a programming language but screw it</h3>
 				<h6>
-					There is no Javascript here yet, because this is a website for a language that compiles into JS. So it should be written in that language, and not JS
+					There is no Javascript here yet, because this is a website for a language that compiles into JS. So it should be written in that language, and not JS. Screw it I did it anyway
 				</h6>
 				<h3>The compiler is not done but here it is:<br>
 				<a target='_blank' href='//github.com/locatlang/compiler'>The compiler</a>
+			</section>
+			<section name='examples'>
+				<h1>Examples of locat code</h1>
+				<div class='file' src='examples/Main.lcat'>
+					<div class='title'>Main.lcat</div>
+					<div class='content'></div>
+				</div>
 			</section>
 		</div>
 	</body>
