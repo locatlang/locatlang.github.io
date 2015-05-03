@@ -32,6 +32,8 @@ $(document).ready(function(){
 		$("section[name=" + $(this).data('section') + "]").addClass('active');
 		$("#sidebar, #sidebar-back").addClass('hidden');
 		$("#menu").removeClass('arrow-back');
+		$("header .header-title .title").removeClass('active');
+		$("header .header-title .title[tid=" + $(this).data('title') + "]").addClass('active');
 	}).inkripple("rgba(0,0,0,0.2)");
 	
 	function escapeHtml(i) {
